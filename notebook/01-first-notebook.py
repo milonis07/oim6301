@@ -95,9 +95,9 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
-    freight_charges
-    return (freight_charges,)
+    #freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
+    #freight_charges
+    return
 
 
 @app.cell(hide_code=True)
@@ -122,21 +122,21 @@ def _(mo):
 
 
 @app.cell
-def _(freight_charges):
-    freight_charges[0]
+def _():
+    #freight_charges[0]
     return
 
 
 @app.cell
-def _(freight_charges):
-    len(freight_charges)
+def _():
+    #len(freight_charges)
     return
 
 
 @app.cell
-def _(freight_charges):
-    total = sum(freight_charges)
-    total
+def _():
+    #total = sum(freight_charges)
+    #total
     return
 
 
@@ -237,8 +237,8 @@ def _(mo):
 
 
 @app.cell
-def _(freight_charges, orders):
-    [type(freight_charges[0]), type(orders[0]), type("Confections"), type(freight_charges[0] > 20)]
+def _():
+    #[type(freight_charges[0]), type(orders[0]), type("Confections"), type(freight_charges[0] > 20)]
     return
 
 
@@ -262,6 +262,19 @@ def _(mo):
     1. `"16.75" + "22.25"`
     2. `16.75 + "22.25"`
     """)
+    return
+
+
+@app.cell
+def _():
+    "16.75" + "22.25"
+    return
+
+
+@app.cell
+def _():
+    16.75 + "22.25"
+
     return
 
 
@@ -296,6 +309,24 @@ def _(mo):
 
     📖 Handbook: Python §3 Expressions and operators
     """)
+    return
+
+
+@app.cell
+def _():
+    #freight_charges[0] > 20
+    return
+
+
+@app.cell
+def _():
+    #freight_charges[-1] == max(freight_charges)
+    return
+
+
+@app.cell
+def _():
+    #type(freight_charges[0] > 20)
     return
 
 
@@ -334,6 +365,12 @@ def _(mo):
 
     Your sentence should show `$120.50` and `$24.10`. If it does not, the experiments above left something changed: check that `freight_charges` still starts with `16.75` and that your `total` cell is still there.
     """)
+    return
+
+
+@app.cell
+def _(freight_charges, total):
+    print(f"Total freight was ${total:.2f}, for an average of ${total / len(freight_charges):.2f} per order.")
     return
 
 
@@ -387,6 +424,22 @@ def _(mo):
     return
 
 
+@app.cell
+def _(freight_charges):
+    under_25 = []
+    for _c in freight_charges:
+        if _c < 25:
+            under_25.append(_c)
+    under_25
+    return (under_25,)
+
+
+@app.cell
+def _(under_25):
+    print(f"There are {len(under_25)} charges below 25, adding up to ${sum(under_25):.2f}.")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -428,12 +481,42 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    it should be import pandas
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    No such file or directory: 'sales.csv'. First we need to upload the file in the noteboook environment.
+    """)
+    return
+
+
+app._unparsable_cell(
+    r"""
+    There is a syntax error, the square bracket needs to be closed.
+    """,
+    name="_"
+)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
     # 🙋 A Line That Does Not Break
 
     Write down what this gives, then run it in a cell of your own.
 
     `max(["9.50", "16.75", "22.25"])`
     """)
+    return
+
+
+@app.cell
+def _():
+    max(["9.50", "16.75", "22.25"])
     return
 
 
@@ -483,6 +566,43 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    1  freight_charges = [16.75, 22.25, "pending", 9.50]
+    2
+    3  total = sum(freight_charges)
+    4  print(total)
+    """,
+    name="_"
+)
+
+
+@app.cell
+def _():
+    freight_charges_fixed = [16.75, 22.25, 9.50]
+    return (freight_charges_fixed,)
+
+
+@app.cell
+def _(freight_charges_fixed):
+    total_fixed = sum(freight_charges_fixed)
+    total_fixed
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Python names the total= sum(freight_charges) as the error message saying invalid syntax.
+    The line I changed is the freight_charges one. I removed the "pending" string because it is list of strings. It is different than what python has named because we are defining the variables in the first line and the actual sum is in different line but it calls the first one.
+
+    I made two changes:
+    1. Renamed the variable to avoid shadowing the built-in `sum` function.
+    2. Removed the `"pending"` string from the `freight_charges` list since `sum()` requires all elements to be numeric (int/float).
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -509,6 +629,17 @@ def _(mo):
 
     The square brackets inside `_ax.bar(...)` are a **list comprehension**, which **iterates** over `orders` and turns each number into text.
     """)
+    return
+
+
+@app.cell
+def _(freight_charges, orders):
+    import matplotlib.pyplot as plt
+
+    _fig, _ax = plt.subplots(figsize=(6, 2.6))
+    _ax.bar([str(_o) for _o in orders], freight_charges)
+    _ax.set_ylabel("freight")
+    _fig
     return
 
 
