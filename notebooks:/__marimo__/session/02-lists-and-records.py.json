@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -38,7 +45,7 @@
       "console": []
     },
     {
-      "id": "hvKs",
+      "id": "bkHC",
       "code_hash": "bd10692cb34408551fe31807fcac29bc",
       "outputs": [
         {
@@ -58,118 +65,55 @@
       ]
     },
     {
-      "id": "LCCp",
-      "code_hash": "5d7d3aa115eac5be84ee2f2d3c96fb77",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "16.753.25\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "id": "lEQa",
+      "code_hash": "1b2ef5908a04b4adf95ad78989f20a6c",
+      "outputs": [],
+      "console": []
     },
     {
-      "id": "yBNP",
+      "id": "PKri",
       "code_hash": "859f7e293bea06562b6884c59f15a1eb",
       "outputs": [],
       "console": []
     },
     {
-      "id": "mOgr",
+      "id": "Xref",
       "code_hash": "7ad98b34140db04a521c2bfdf164eef6",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "Rvha",
+      "id": "SFPL",
       "code_hash": "4045827803a4c1e9ea852794ab91a4c0",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "iasM",
+      "id": "BYtC",
       "code_hash": "d18e543b98299a5a090f9094f297fde2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:18.5\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "nXjV",
+      "id": "RGSE",
       "code_hash": "e2ca65a54a67e8688ee697c7e6c9e654",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Total charge is $17.80\nTotal charge is $23.64\nTotal charge is $26.56\nTotal charge is $19.66\nTotal charge is $31.88\nTotal charge is $13.80\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
-      "id": "yfdw",
+      "id": "Kclp",
       "code_hash": "403d74789879e73a8442e3ce095b6cb1",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "16.75\n22.25\n18.5\n12.99\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
-      "id": "bkHC",
+      "id": "emfo",
       "code_hash": "115cdc766461e63d887742e99ed47a5d",
       "outputs": [],
       "console": []
     },
     {
-      "id": "lEQa",
+      "id": "Hstk",
       "code_hash": "9b44ca46a3aeb5b1fdd7baa4989e7e88",
       "outputs": [
         {
@@ -182,7 +126,7 @@
       "console": []
     },
     {
-      "id": "PKri",
+      "id": "nWHF",
       "code_hash": "18db72514e4744db7535f15264da6a85",
       "outputs": [
         {
@@ -195,7 +139,7 @@
       "console": []
     },
     {
-      "id": "Xref",
+      "id": "iLit",
       "code_hash": "3162e71c11ea9d96662b50a13fe21705",
       "outputs": [
         {
@@ -208,7 +152,7 @@
       "console": []
     },
     {
-      "id": "SFPL",
+      "id": "ZHCJ",
       "code_hash": "8b92c83e94bc2769763f79661e30f6eb",
       "outputs": [
         {
@@ -221,20 +165,20 @@
       "console": []
     },
     {
-      "id": "BYtC",
-      "code_hash": "19fcbdf4ffd48826b1d19dcc06b0483d",
+      "id": "ROlb",
+      "code_hash": "36109e32563fd06cfba97c7bbdab0cca",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong></span>\n<span class=\"paragraph\"><strong>C \u00b7</strong></span>\n<span class=\"paragraph\"><strong>D \u00b7</strong></span>\n<span class=\"paragraph\"><strong>E \u00b7</strong></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"your-written-answers\">Your written answers</h3>\n<span class=\"paragraph\">Four of the drills below ask for a sentence. This cell is where they go. Click into\nit, write under the letter, and press <code>Ctrl+Enter</code>. Code still goes in cells of your\nown, added with the <strong>+</strong> button.</span>\n<span class=\"paragraph\"><strong>A \u00b7</strong> Python decides to print the first condition that is listed by us that is satisfied if there are multiple.</span>\n<span class=\"paragraph\"><strong>C \u00b7</strong> Append only adds one item, even if it is a list.</span>\n<span class=\"paragraph\"><strong>D \u00b7</strong> sorted(tickers) returns a new sorted list, while .sort() sorts it in place but doesn't return anything.</span>\n<span class=\"paragraph\"><strong>E \u00b7</strong> You'd want two names on the same list on purpose when you want a change made\nthrough one name to show up automatically to the other.</span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "RGSE",
+      "id": "qnkX",
       "code_hash": "9b6d1aeb948c609622d2cb77220b7d81",
       "outputs": [
         {
@@ -247,13 +191,27 @@
       "console": []
     },
     {
-      "id": "Kclp",
-      "code_hash": "dc0cf7ab380db59842116577d44768e7",
-      "outputs": [],
-      "console": []
+      "id": "TqIu",
+      "code_hash": "7bca14bdedd058fac35dc33c9c31ae07",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Fail\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "emfo",
+      "id": "Vxnm",
       "code_hash": "fb022f81dfbffed89f3565af612fe5ec",
       "outputs": [
         {
@@ -266,13 +224,59 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "DnEU",
       "code_hash": "413f573172b95d2cba69850b5e98a1e1",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"shipped\", \"pending\", \"shipped\", \"cancelled\", \"shipped\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "BVZN",
+      "code_hash": "e8314d4e1e17c66196461db6bae9def2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>3</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RbfH",
+      "code_hash": "2f6410d36da737df9be78796202d936b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>2</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Irhu",
+      "code_hash": "bb9ae010e642564cccf8ca6b78f22f7a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>60.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
       "code_hash": "53b3a52a2d49ccac692ab047603ba4c1",
       "outputs": [
         {
@@ -285,13 +289,33 @@
       "console": []
     },
     {
-      "id": "iLit",
-      "code_hash": "d7f1e30a273b00c372f58d2c77801a99",
-      "outputs": [],
+      "id": "ecfG",
+      "code_hash": "c85449df5aaeecfdcb957912380535a2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>4</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "QiHe",
+      "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;stapler&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
         {
@@ -304,13 +328,40 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "ZBYS",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"AAPL\", \"MSFT\", \"NVDA\"]"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "['AAPL', 'MSFT', 'NVDA']\nNone\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "BbXu",
+      "code_hash": "976ab415ada8b578bfa5f54bec60eec0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"NVDA\", \"MSFT\", \"AAPL\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "aLJB",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
         {
@@ -323,13 +374,46 @@
       "console": []
     },
     {
-      "id": "TqIu",
-      "code_hash": "8d95c8f244caaf7e1606caf938476e98",
-      "outputs": [],
+      "id": "nHfw",
+      "code_hash": "fef8050147ab6b97e03e371500ce2207",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\"]"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "Sabd",
+      "code_hash": "da56d086dd6116a545e315bc3806642d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>False</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yqWY",
+      "code_hash": "eb87331a5d3465df0dfb7f69a472616a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"text/plain+float:11.25\", \"text/plain+float:7.2\", \"text/plain+float:17.991\", \"text/plain+float:4.4910000000000005\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
       "code_hash": "8e5e2a59e9f4c3607fa0b5cb1f86f715",
       "outputs": [
         {
@@ -342,13 +426,13 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "AjVT",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
       "outputs": [],
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "pHFh",
       "code_hash": "1d4cd33d87f69cef37de87f6bdd519ca",
       "outputs": [
         {
@@ -361,7 +445,7 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "NCOB",
       "code_hash": "b9a8a3f558e3abd939892755cdb675a5",
       "outputs": [
         {
@@ -374,13 +458,13 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "aqbW",
       "code_hash": "53f7fdf6f5abd48e8964538bd017999e",
       "outputs": [],
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "TRpd",
       "code_hash": "692b58e986493ab11653c79bccc2af34",
       "outputs": [
         {
@@ -393,13 +477,13 @@
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "TXez",
       "code_hash": "332446c7b3958fd46ca5386ebac32217",
       "outputs": [],
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "dNNg",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -412,7 +496,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "yCnT",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -425,13 +509,13 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "wlCL",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
       "outputs": [],
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "kqZH",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -444,13 +528,13 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "wAgl",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
       "outputs": [],
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "rEll",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -463,7 +547,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "dGlV",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -476,7 +560,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "SdmI",
       "code_hash": "1a951e63750454427afca99d94d5c044",
       "outputs": [
         {
@@ -489,7 +573,7 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "lgWD",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -502,13 +586,13 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "yOPj",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
       "outputs": [],
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "fwwy",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -521,13 +605,13 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "LJZf",
       "code_hash": "75416f5df6cb12c24498123c5e0d1d9a",
       "outputs": [],
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "urSm",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {

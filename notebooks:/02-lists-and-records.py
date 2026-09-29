@@ -252,13 +252,14 @@ def _(mo):
     it, write under the letter, and press `Ctrl+Enter`. Code still goes in cells of your
     own, added with the **+** button.
 
-    **A ·**
+    **A ·** Python decides to print the first condition that is listed by us that is satisfied if there are multiple.
 
-    **C ·**
+    **C ·** Append only adds one item, even if it is a list.
 
-    **D ·**
+    **D ·** sorted(tickers) returns a new sorted list, while .sort() sorts it in place but doesn't return anything.
 
-    **E ·**
+    **E ·** You'd want two names on the same list on purpose when you want a change made
+    through one name to show up automatically to the other.
     """)
     return
 
@@ -287,11 +288,13 @@ def _(mo):
 
 @app.cell
 def _():
-    score = 95
-    if score >= 60:
+    score = 55
+    if score >= 60 and score <90:
         print("Pass")
     elif score >= 90:
         print("A")
+    else:
+        print("Fail")
     return
 
 
@@ -319,6 +322,33 @@ def _(mo):
 def _():
     statuses = ["shipped", "pending", "shipped", "cancelled", "shipped"]
     statuses
+    return (statuses,)
+
+
+@app.cell
+def _(statuses):
+    shipped_count = 0
+    for status in statuses:
+        if status == "shipped":
+            shipped_count = shipped_count + 1
+    shipped_count
+    return (shipped_count,)
+
+
+@app.cell
+def _(statuses):
+    not_shipped_count = 0
+    for i in statuses:
+        if i != "shipped":
+            not_shipped_count = not_shipped_count + 1
+    not_shipped_count
+    return
+
+
+@app.cell
+def _(shipped_count, statuses):
+    percent_shipped = shipped_count / len(statuses) * 100
+    percent_shipped
     return
 
 
@@ -346,8 +376,14 @@ def _(mo):
 @app.cell
 def _():
     order_lines = ["notebook", "pen"]
-    order_lines.append(["stapler", "tape"])
+    order_lines.extend(["stapler", "tape"])
     len(order_lines)
+    return (order_lines,)
+
+
+@app.cell
+def _(order_lines):
+    order_lines[2]
     return
 
 
@@ -378,6 +414,12 @@ def _():
     print(sorted(tickers))
     print(tickers.sort())
     tickers
+    return (tickers,)
+
+
+@app.cell
+def _(tickers):
+    sorted(tickers, reverse=True)
     return
 
 
@@ -411,9 +453,24 @@ def _(mo):
 @app.cell
 def _():
     prices = [12.50, 8.00, 19.99]
-    sale_prices = prices
+    sale_prices = prices[:]
     sale_prices.append(4.99)
     prices
+    return prices, sale_prices
+
+
+@app.cell
+def _(prices, sale_prices):
+    prices is sale_prices
+    return
+
+
+@app.cell
+def _(sale_prices):
+    discounted_prices = []
+    for price in sale_prices:
+        discounted_prices.append(price * 0.90)
+    discounted_prices
     return
 
 
