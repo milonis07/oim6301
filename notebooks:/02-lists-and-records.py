@@ -502,6 +502,24 @@ def _():
     return
 
 
+@app.cell
+def _():
+    int("100") + int("50")
+    return
+
+
+@app.cell
+def _():
+    int("100.5")
+    return
+
+
+@app.cell
+def _():
+    float("100.5")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -580,6 +598,24 @@ def _(mo):
     Two of them fail, and both give the same kind of error. Add a cell and find out
     which, and what the message says. A `KeyError` names the key it could not find.
     """)
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["Freight"]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order["freight"]
+    return
+
+
+@app.cell
+def _(first_order):
+    first_order[0]
     return
 
 
@@ -672,6 +708,45 @@ def _(mo):
     return
 
 
+@app.cell
+def _(orders):
+    orders_total = 0
+    for order in orders:
+        orders_total = orders_total + order["Freight"]
+    orders_total
+    return
+
+
+@app.cell
+def _(orders):
+    not_shipped = 0
+    for order_1 in orders:
+        if order_1["ShippedDate"] is None:
+            not_shipped = not_shipped + 1
+    not_shipped
+    return
+
+
+@app.cell
+def _(orders):
+    largest_freight = 0
+    largest_order = None
+    for order_2 in orders:
+        if order_2["Freight"] > largest_freight:
+            largest_freight = order_2["Freight"]
+            largest_order = order_2["OrderID"]
+    largest_order, largest_freight
+    return
+
+
+@app.cell
+def _(orders):
+    for order_3 in orders:
+        if order_3["ShippedDate"] is None:
+            print(order_3["OrderID"], order_3["OrderDate"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -692,7 +767,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    *One row is ...*
+    *One row is one order a customer placed, showing details like where it went and whether it has shipped yet.*
 
     *(Replace this line with your own sentence. If this cell shows you code instead of
     text, use the cell menu to turn it into a markdown cell.)*
@@ -733,7 +808,37 @@ def _():
         {"Symbol": "TSLA", "Shares": 150, "Price": 255.70},
     ]
     portfolio
+    return (portfolio,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    For each holding, multiply shares by price to get its cost. Then add up all six costs to get the total.
+    """)
     return
+
+
+@app.cell
+def _(portfolio):
+    portfolio_total = 0
+    for holding in portfolio:
+        portfolio_total = portfolio_total + holding["Shares"] * holding["Price"]
+    portfolio_total
+    return
+
+
+@app.cell
+def _(portfolio):
+    expensive_count = 0
+    expensive_total = 0
+    for holdings in portfolio:
+        cost = holdings["Shares"] * holdings["Price"]
+        if cost > 10000:
+            expensive_count = expensive_count + 1
+            expensive_total = expensive_total + cost
+    expensive_count, expensive_total
+    return (cost,)
 
 
 @app.cell(hide_code=True)
@@ -784,6 +889,29 @@ def _(mo):
         _where = f"could not write into {_data_dir.name}/: {_error}"
 
     _where
+    return (portfolio_csv,)
+
+
+@app.cell
+def _(portfolio_csv):
+    portfolio_lines = portfolio_csv.read_text().splitlines()
+    portfolio_lines
+    return (portfolio_lines,)
+
+
+@app.cell
+def _(portfolio_lines):
+    print(f"{'name':<6} {'shares':>6} {'price':>10}")
+    file_total = 0
+    for line in portfolio_lines[1:]:
+        parts = line.split(",")
+        name = parts[0]
+        shares = int(parts[1])
+        price = float(parts[2])
+        file_cost = shares * price
+        file_total = file_total + file_cost
+        print(f"{name:<6} {shares:>6} {price:>10.2f}")
+    print(f"Total cost: ${file_total:.2f}")
     return
 
 

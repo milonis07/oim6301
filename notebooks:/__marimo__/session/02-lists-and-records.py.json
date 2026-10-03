@@ -47,22 +47,8 @@
     {
       "id": "bkHC",
       "code_hash": "bd10692cb34408551fe31807fcac29bc",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Enter the cost: 16.75\nEnter the tax:  3.25\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
       "id": "lEQa",
@@ -141,14 +127,7 @@
     {
       "id": "iLit",
       "code_hash": "3162e71c11ea9d96662b50a13fe21705",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"text/plain+float:16.75\", \"text/plain+float:22.25\", \"text/plain+float:25.0\", \"text/plain+float:20.25\", \"text/plain+float:36.25\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -192,23 +171,9 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "7bca14bdedd058fac35dc33c9c31ae07",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Fail\n",
-          "mimetype": "text/plain"
-        }
-      ]
+      "code_hash": "7c34579217b4c3c17694fc974bc9b552",
+      "outputs": [],
+      "console": []
     },
     {
       "id": "Vxnm",
@@ -226,57 +191,29 @@
     {
       "id": "DnEU",
       "code_hash": "413f573172b95d2cba69850b5e98a1e1",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"shipped\", \"pending\", \"shipped\", \"cancelled\", \"shipped\"]"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "BVZN",
-      "code_hash": "e8314d4e1e17c66196461db6bae9def2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>3</pre>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "RbfH",
-      "code_hash": "2f6410d36da737df9be78796202d936b",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>2</pre>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Irhu",
-      "code_hash": "bb9ae010e642564cccf8ca6b78f22f7a",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>60.0</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
       "id": "ulZA",
+      "code_hash": "e8314d4e1e17c66196461db6bae9def2",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "2f6410d36da737df9be78796202d936b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "bb9ae010e642564cccf8ca6b78f22f7a",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
       "code_hash": "53b3a52a2d49ccac692ab047603ba4c1",
       "outputs": [
         {
@@ -289,33 +226,19 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "aLJB",
       "code_hash": "c85449df5aaeecfdcb957912380535a2",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>4</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "QiHe",
+      "id": "nHfw",
       "code_hash": "dc4562b11af0fc62ed5e1f1dc59956c4",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>&#x27;stapler&#x27;</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "xXTn",
       "code_hash": "6935532a36f420a3c62570d37b41c982",
       "outputs": [
         {
@@ -328,40 +251,19 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "AjVT",
       "code_hash": "01a8d5269858a498482cb962fade9d87",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"AAPL\", \"MSFT\", \"NVDA\"]"
-          }
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "['AAPL', 'MSFT', 'NVDA']\nNone\n",
-          "mimetype": "text/plain"
-        }
-      ]
-    },
-    {
-      "id": "BbXu",
-      "code_hash": "976ab415ada8b578bfa5f54bec60eec0",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"NVDA\", \"MSFT\", \"AAPL\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "aLJB",
+      "id": "pHFh",
+      "code_hash": "976ab415ada8b578bfa5f54bec60eec0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "NCOB",
       "code_hash": "f405b348260f91aaa0a73e40c618af25",
       "outputs": [
         {
@@ -374,46 +276,25 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "aqbW",
       "code_hash": "fef8050147ab6b97e03e371500ce2207",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"text/plain+float:12.5\", \"text/plain+float:8.0\", \"text/plain+float:19.99\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "Sabd",
+      "id": "TRpd",
       "code_hash": "da56d086dd6116a545e315bc3806642d",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>False</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "yqWY",
+      "id": "TXez",
       "code_hash": "eb87331a5d3465df0dfb7f69a472616a",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "application/json": "[\"text/plain+float:11.25\", \"text/plain+float:7.2\", \"text/plain+float:17.991\", \"text/plain+float:4.4910000000000005\"]"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "dNNg",
       "code_hash": "8e5e2a59e9f4c3607fa0b5cb1f86f715",
       "outputs": [
         {
@@ -426,13 +307,73 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "yCnT",
       "code_hash": "e22c9fe5df8633ecd9c695b5510cb87f",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10050\n150\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "NdGg",
+      "code_hash": "f22f03cba410b6a3517f3ab007f585de",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>150</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "ppEG",
+      "code_hash": "428866640000dc925c086c6f264cb8b5",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "invalid literal for int() with base 10: '100.5'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/var/folders/0h/hqmx44_n4hz4hb7_z003z3zh0000gn/T/marimo_72931/__marimo__cell_ppEG_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"s2\">\"100.5\"</span><span class=\"p\">)</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~^^^^^^^^^</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">invalid literal for int() with base 10: '100.5'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "ngdM",
+      "code_hash": "214b029b8c946cea7bf3dd66ac5798cb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>100.5</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wlCL",
       "code_hash": "1d4cd33d87f69cef37de87f6bdd519ca",
       "outputs": [
         {
@@ -445,7 +386,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "kqZH",
       "code_hash": "b9a8a3f558e3abd939892755cdb675a5",
       "outputs": [
         {
@@ -458,13 +399,20 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "wAgl",
       "code_hash": "53f7fdf6f5abd48e8964538bd017999e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "{\"OrderID\": 10248, \"CustomerID\": \"VINET\", \"ShipCountry\": \"France\", \"ShipCity\": \"Reims\", \"OrderDate\": \"2016-07-04\", \"ShippedDate\": \"2016-07-16\", \"Freight\": \"text/plain+float:16.75\"}"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "rEll",
       "code_hash": "692b58e986493ab11653c79bccc2af34",
       "outputs": [
         {
@@ -477,13 +425,20 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "dGlV",
       "code_hash": "332446c7b3958fd46ca5386ebac32217",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;France&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "SdmI",
       "code_hash": "b4c4fb6a4f42fd5d98b6b18739a03241",
       "outputs": [
         {
@@ -496,7 +451,60 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wUDR",
+      "code_hash": "2bfc2c56d92d1252dcea892b8285d87a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>16.75</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kFNn",
+      "code_hash": "2c0ebdac371fde0a720bc52f0ec33995",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'freight'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/var/folders/0h/hqmx44_n4hz4hb7_z003z3zh0000gn/T/marimo_72931/__marimo__cell_kFNn_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"s2\">\"freight\"</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^^^^^^^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">'freight'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "CqQC",
+      "code_hash": "8c9992a7ee25d4caccd1bebf692690ee",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "0",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/var/folders/0h/hqmx44_n4hz4hb7_z003z3zh0000gn/T/marimo_72931/__marimo__cell_CqQC_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">first_order</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~^^^</span>\n<span class=\"gr\">KeyError</span>: <span class=\"n\">0</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
       "code_hash": "0ed1e9cc210d89a44e791cc8866fac27",
       "outputs": [
         {
@@ -509,13 +517,20 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "yOPj",
       "code_hash": "2e78ba09148c2840a0ce57701f538f5b",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>30</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "fwwy",
       "code_hash": "215e85cc1d798eb376e760e2e6876215",
       "outputs": [
         {
@@ -528,13 +543,20 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "LJZf",
       "code_hash": "56ae7cf264083e0936598623c21b783a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;France&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "urSm",
       "code_hash": "362a604c80a321d2e4d5c0c5e80b4671",
       "outputs": [
         {
@@ -547,7 +569,66 @@
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "QOYo",
+      "code_hash": "9552d2502ccca571c23b9a7dc4f32e82",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>827.0</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uSJR",
+      "code_hash": "db2ff562c9a1335228d66ee49ff566c2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>3</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MToE",
+      "code_hash": "89a952f65f60e5120fc37d93a4ccf6e2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[10263, \"text/plain+float:56.0\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bzwY",
+      "code_hash": "02e746471fb266f613578938458ebf3a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "11008 2018-04-08\n11019 2018-04-13\n11039 2018-04-21\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "jxvo",
       "code_hash": "276567fb8e96c73de1480e5e345ad8c1",
       "outputs": [
         {
@@ -560,20 +641,20 @@
       "console": []
     },
     {
-      "id": "SdmI",
-      "code_hash": "1a951e63750454427afca99d94d5c044",
+      "id": "mWxS",
+      "code_hash": "ca7274cac0daaa0298a421b5a1a9e00b",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>One row is ...</em></span>\n<span class=\"paragraph\"><em>(Replace this line with your own sentence. If this cell shows you code instead of\ntext, use the cell menu to turn it into a markdown cell.)</em></span></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><em>One row is one order a customer placed, showing details like where it went and whether it has shipped yet.</em></span>\n<span class=\"paragraph\"><em>(Replace this line with your own sentence. If this cell shows you code instead of\ntext, use the cell menu to turn it into a markdown cell.)</em></span></span>"
           }
         }
       ],
       "console": []
     },
     {
-      "id": "lgWD",
+      "id": "CcZR",
       "code_hash": "33f3e6ba51f144e4af890984773e0cfc",
       "outputs": [
         {
@@ -586,13 +667,52 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "YWSi",
       "code_hash": "ee04f5dc9b3e474ede5f3f883c3aa33e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[{\"Symbol\": \"AAPL\", \"Shares\": 100, \"Price\": \"text/plain+float:173.93\"}, {\"Symbol\": \"MSFT\", \"Shares\": 50, \"Price\": \"text/plain+float:319.53\"}, {\"Symbol\": \"GOOG\", \"Shares\": 80, \"Price\": \"text/plain+float:131.36\"}, {\"Symbol\": \"AMZN\", \"Shares\": 200, \"Price\": \"text/plain+float:129.33\"}, {\"Symbol\": \"NVDA\", \"Shares\": 20, \"Price\": \"text/plain+float:410.17\"}, {\"Symbol\": \"TSLA\", \"Shares\": 150, \"Price\": \"text/plain+float:255.7\"}]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "oWAR",
+      "code_hash": null,
       "outputs": [],
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "zVpH",
+      "code_hash": "8df4983764110f98c9385c69867d7eef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>116302.7</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lKyJ",
+      "code_hash": "7a47bc817ae5f84cd6b30eb300d09c9c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[5, \"text/plain+float:108099.3\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zlud",
       "code_hash": "d7c2e174de0e810f192e0ebcd5f38e05",
       "outputs": [
         {
@@ -605,13 +725,53 @@
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "tZnO",
       "code_hash": "75416f5df6cb12c24498123c5e0d1d9a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;wrote data/portfolio.csv&#x27;</pre>"
+          }
+        }
+      ],
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "FFCd",
+      "code_hash": "f69b3f0d929f3b1614870e90503d4a22",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[\"name,shares,price\", \"AAPL,100,173.93\", \"MSFT,50,319.53\", \"GOOG,80,131.36\", \"AMZN,200,129.33\", \"NVDA,20,410.17\", \"TSLA,150,255.7\"]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rduT",
+      "code_hash": "05cb017572817b3ac1c67630abfd5421",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "name   shares      price\nAAPL      100     173.93\nMSFT       50     319.53\nGOOG       80     131.36\nAMZN      200     129.33\nNVDA       20     410.17\nTSLA      150     255.70\nTotal cost: $116302.70\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "xvXZ",
       "code_hash": "d8cb88a4a782aa1a3abecba9ae2a81aa",
       "outputs": [
         {
