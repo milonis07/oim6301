@@ -328,7 +328,7 @@ app._unparsable_cell(
 
 app._unparsable_cell(
     r"""
-    Cell Reference: See the comparison-table cell in Section 5, the one that loops for point in reorder_points: and prints units lost, lost days, orders, and average stock for each point.
+    Cell Reference: See the comparison-table cell in Section 5 (Cell 10), the one that loops for point in reorder_points: and prints units lost, lost days, orders, and average stock for each point.
     """,
     name="_"
 )
