@@ -80,8 +80,38 @@ def _(mo):
 
 @app.cell
 def _():
-    # Your inputs.
-    return
+    # Starting inventory and ordering details
+    starting_stock = 60
+    order_quantity = 100
+    lead_time_days = 3
+
+    # Reorder points to compare
+    reorder_points = [20, 30, 40, 50]
+
+    # Daily demand for 30 days
+    daily_demand = [
+        12, 15, 9, 14, 18, 11, 10, 16, 13, 17,
+        8, 12, 20, 14, 11, 9, 15, 13, 16, 12,
+        10, 14, 19, 11, 13, 15, 9, 12, 17, 14
+    ]
+
+    return (
+        daily_demand,
+        lead_time_days,
+        order_quantity,
+        reorder_points,
+        starting_stock,
+    )
+
+
+@app.cell
+def _():
+    #extra inputs for section 8
+    holding_cost_per_carton = 0.50
+    delivery_fee = 40
+    lost_margin_per_carton = 8
+
+    return delivery_fee, holding_cost_per_carton, lost_margin_per_carton
 
 
 @app.cell(hide_code=True)
@@ -95,8 +125,82 @@ def _(mo):
 
 
 @app.cell
-def _():
-    return
+def _(daily_demand, lead_time_days, order_quantity, starting_stock):
+    def simulate(reorder_point):
+        stock = starting_stock
+        pending_orders = []
+        rows = []
+
+        total_lost = 0
+        days_with_lost_sales = 0
+        orders_placed = 0
+        total_ending_stock = 0
+
+        for day in range(1, len(daily_demand) + 1):
+            starting = stock
+            arrived = 0
+            remaining_orders = []
+
+            # Receive orders that are due today.
+            for arrival_day, quantity in pending_orders:
+                if arrival_day == day:
+                    arrived += quantity
+                else:
+                    remaining_orders.append((arrival_day, quantity))
+
+            pending_orders = remaining_orders
+            stock = stock + arrived
+
+            # Sell what is available and record lost sales.
+            demand = daily_demand[day - 1]
+            sold = min(stock, demand)
+            lost = demand - sold
+            stock = stock - sold
+
+            total_lost += lost
+            if lost > 0:
+                days_with_lost_sales += 1
+
+            # Count stock plus orders that have not arrived.
+            inventory_position = stock
+            for arrival_day, quantity in pending_orders:
+                inventory_position += quantity
+
+            # Place an order if the reorder point is reached.
+            ordered = 0
+            if inventory_position <= reorder_point:
+                ordered = order_quantity
+                pending_orders.append(
+                    (day + lead_time_days, order_quantity)
+                )
+                orders_placed += 1
+
+            ending = stock
+            total_ending_stock += ending
+
+            rows.append({
+                "day": day,
+                "starting": starting,
+                "arrived": arrived,
+                "demand": demand,
+                "sold": sold,
+                "lost": lost,
+                "ending": ending,
+                "ordered": ordered
+            })
+
+        average_stock = total_ending_stock / len(daily_demand)
+
+        return (
+            rows,
+            total_lost,
+            days_with_lost_sales,
+            orders_placed,
+            average_stock
+        )
+
+
+    return (simulate,)
 
 
 @app.cell(hide_code=True)
@@ -110,7 +214,54 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(simulate):
+
+    result = simulate(40)
+    daily_rows = result[0]
+
+    print("DAILY SIMULATION: REORDER POINT 40")
+    print(
+        f"{'Day':>3} {'Start':>7} {'Arrived':>7} "
+        f"{'Demand':>7} {'Sold':>6} {'Lost':>6} "
+        f"{'Ending':>7} {'Ordered':>8}"
+    )
+
+    for row in daily_rows:
+        print(
+            f"{row['day']:>3} "
+            f"{row['starting']:>7} "
+            f"{row['arrived']:>7} "
+            f"{row['demand']:>7} "
+            f"{row['sold']:>6} "
+            f"{row['lost']:>6} "
+            f"{row['ending']:>7} "
+            f"{row['ordered']:>8}"
+        )
+
+    return
+
+
+@app.cell
+def _(reorder_points, simulate):
+
+    print("\nREORDER POINT COMPARISON")
+    print(
+        f"{'Point':>6} {'Units Lost':>11} "
+        f"{'Lost Days':>10} {'Orders':>7} "
+        f"{'Avg Stock':>10}"
+    )
+
+    for point in reorder_points:
+        comparison_result = simulate(point)
+
+        print(
+            f"{point:>6} "
+            f"{comparison_result[1]:>11} "
+            f"{comparison_result[2]:>10} "
+            f"{comparison_result[3]:>7} "
+            f"{comparison_result[4]:>10.2f}"
+        )
+
     return
 
 
@@ -125,7 +276,33 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(daily_demand, simulate):
+    def _():
+        check_rows = simulate(40)[0]
+
+        total_demand = sum(daily_demand)
+        total_sold = 0
+        total_lost = 0
+        inventory_balances = True
+
+        for row in check_rows:
+            total_sold += row["sold"]
+            total_lost += row["lost"]
+
+            expected_ending = (
+                row["starting"] + row["arrived"] - row["sold"]
+            )
+
+            if expected_ending != row["ending"]:
+                inventory_balances = False
+
+        print("Total demand:", total_demand)
+        print("Total sold + total lost:", total_sold + total_lost)
+        print("Demand check:", total_demand == total_sold + total_lost)
+        return print("Daily inventory balance check:", inventory_balances)
+
+
+    _()
     return
 
 
@@ -141,12 +318,91 @@ def _(mo):
     return
 
 
+app._unparsable_cell(
+    r"""
+    I noticed that my comparison table was only showing the result for reorder point 50 instead of showing all four reorder points. I checked the code and realized that the print statement was not properly placed inside the loop, so it was only displaying the last result. I corrected the indentation so that the table prints the results for 20, 30, 40, and 50. After running the code again, I confirmed that all four rows appeared with the correct values.
+    """,
+    name="_"
+)
+
+
+app._unparsable_cell(
+    r"""
+    Cell Reference: See the comparison-table cell in Section 5, the one that loops for point in reorder_points: and prints units lost, lost days, orders, and average stock for each point.
+    """,
+    name="_"
+)
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ## 8. Going Further
 
     *Take at least one step past the main task, in any direction, and use your agent as much as you like. It does not have to work. State what you tried, what you found, and where it is in this notebook.*
+    """)
+    return
+
+
+@app.cell
+def _(delivery_fee, holding_cost_per_carton, lost_margin_per_carton, simulate):
+    lowest_cost = None
+    best_points = []
+
+    print("\nCOST COMPARISON")
+    print(
+        f"{'Point':>6} {'Holding':>10} "
+        f"{'Delivery':>10} {'Lost Sales':>11} "
+        f"{'Total Cost':>11}"
+    )
+
+    for tested_point in range(10, 81):
+        cost_result = simulate(tested_point)
+
+        cost_rows = cost_result[0]
+        units_lost = cost_result[1]
+        number_of_orders = cost_result[3]
+
+        total_stock_for_cost = 0
+
+        for stock_row in cost_rows:
+            total_stock_for_cost += stock_row["ending"]
+
+        holding_cost = (
+            total_stock_for_cost * holding_cost_per_carton
+        )
+        delivery_cost = number_of_orders * delivery_fee
+        lost_sales_cost = units_lost * lost_margin_per_carton
+
+        total_cost = (
+            holding_cost + delivery_cost + lost_sales_cost
+        )
+
+        print(
+            f"{tested_point:>6} "
+            f"${holding_cost:>9.2f} "
+            f"${delivery_cost:>9.2f} "
+            f"${lost_sales_cost:>10.2f} "
+            f"${total_cost:>10.2f}"
+        )
+
+        if lowest_cost is None or total_cost < lowest_cost:
+            lowest_cost = total_cost
+            best_points = [tested_point]
+        elif total_cost == lowest_cost:
+            best_points.append(tested_point)
+
+    print("\nLOWEST-COST RESULT")
+    print("Best reorder points:", best_points)
+    print(f"Lowest total cost: ${lowest_cost:.2f}")
+
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I extended my simulation by adding holding costs, delivery fees, and the cost of lost sales. I tested reorder points from 10 to 80 to find which one had the lowest total cost. The lowest cost was $886.50, achieved by reorder points between 36 and 40. These reorder points met all customer demand while balancing inventory holding and delivery costs. This showed me that the best reorder point is not necessarily the one with the least stock, but the one that minimizes the overall cost.
     """)
     return
 
