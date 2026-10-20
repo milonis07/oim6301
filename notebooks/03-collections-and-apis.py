@@ -160,10 +160,19 @@ def _(mo):
     **B ·** France, Germany, Brazil, and the USA are tied for the most, each with 4 orders.
 
     **C ·**
+    1. The lines on one order: a **list**, because it is many of the same thing and must change — add, remove, reorder.
+    2. Every customer who has ordered this year, each once: a **set**, because the only question is whether a customer has been seen before.
+    3. Units sold looked up by product name: a **dictionary**, because each value is found by name, not by position.
+    4. One shipment's carrier, tracking number and ship date: a **tuple**, because it is one thing with named parts that must never change.
 
-    **D ·**
 
-    **G ·**
+    **D ·** I'd rather use the list of dictionaries. Reading holding["Shares"] tells you what the value is, but holding[1] only tells you where it sits — if the fields were ever reordered, the tuple version would quietly grab the wrong number.
+
+    For each ticker, I keep a list of its buy lots still on hand, in the order they were bought, with each lot holding how many shares and at what price. When a sale happens, I work through that ticker's list from the oldest lot forward: I take shares from the oldest lot first, up to however many it has. If the sale needs more than that lot holds, I use up the whole lot and move to the next-oldest one, continuing until the sale's share count is fully covered. The gain on the sale is the difference between what those shares sold for and what they were originally bought for. Any lot used completely is removed; a lot only partly used has its remaining shares reduced but stays in place for the next sale.
+
+
+
+    **G ·** The first result is in Florida. Code that always takes [0] would have silently picked the wrong Babson Park; the one near the college is in Massachusetts, further down the list, with no error warning that it grabbed a different place entirely.
     """)
     return
 
@@ -482,6 +491,15 @@ def _(mo):
 
 
 @app.cell
+def _(holdings):
+    holdings_total = 0
+    for _symbol, _shares, _price in holdings:
+        holdings_total = holdings_total + _shares * _price
+    holdings_total
+    return
+
+
+@app.cell
 def _():
     holdings = [
         ("AAPL", 100, 173.93),
@@ -492,6 +510,27 @@ def _():
         ("TSLA", 150, 255.70),
     ]
     holdings
+    return (holdings,)
+
+
+@app.cell
+def _(holdings):
+    holding_costs = {}
+    for _symbol, _shares, _price in holdings:
+        holding_costs[_symbol] = _shares * _price
+    holding_costs
+    return (holding_costs,)
+
+
+@app.cell
+def _(holding_costs):
+    largest_symbol = None
+    largest_cost = 0
+    for _symbol, _cost in holding_costs.items():
+        if _cost > largest_cost:
+            largest_cost = _cost
+            largest_symbol = _symbol
+    largest_symbol, largest_cost
     return
 
 
@@ -524,6 +563,64 @@ def _():
         ("2026-08-12", "AAPL", "sell", 40, 250.00),
     ]
     year_trades
+    return (year_trades,)
+
+
+@app.cell
+def _(year_trades):
+    lots = {}
+    gains_by_ticker = {}
+    total_gain = 0
+
+    for _date, _ticker, _action, _shares, _price in year_trades:
+        if _action == "buy":
+            if _ticker not in lots:
+                lots[_ticker] = []
+            lots[_ticker].append([_shares, _price])
+        else:
+            remaining = _shares
+            sale_gain = 0
+            while remaining > 0:
+                lot_shares, lot_price = lots[_ticker][0]
+                if lot_shares <= remaining:
+                    sale_gain = sale_gain + lot_shares * (_price - lot_price)
+                    remaining = remaining - lot_shares
+                    lots[_ticker].pop(0)
+                else:
+                    sale_gain = sale_gain + remaining * (_price - lot_price)
+                    lots[_ticker][0][0] = lot_shares - remaining
+                    remaining = 0
+            gains_by_ticker[_ticker] = gains_by_ticker.get(_ticker, 0) + sale_gain
+            total_gain = total_gain + sale_gain
+
+    gains_by_ticker, total_gain
+    return
+
+
+@app.cell
+def _(year_trades):
+    def _():
+        avg_lots = {}
+        avg_gains_by_ticker = {}
+        avg_total_gain = 0
+
+        for _date, _ticker, _action, _shares, _price in year_trades:
+            if _ticker not in avg_lots:
+                avg_lots[_ticker] = [0, 0]
+            if _action == "buy":
+                avg_lots[_ticker][0] = avg_lots[_ticker][0] + _shares
+                avg_lots[_ticker][1] = avg_lots[_ticker][1] + _shares * _price
+            else:
+                avg_price = avg_lots[_ticker][1] / avg_lots[_ticker][0]
+                sale_gain = _shares * (_price - avg_price)
+                avg_lots[_ticker][1] = avg_lots[_ticker][1] - _shares * avg_price
+                avg_lots[_ticker][0] = avg_lots[_ticker][0] - _shares
+                avg_gains_by_ticker[_ticker] = avg_gains_by_ticker.get(_ticker, 0) + sale_gain
+                avg_total_gain = avg_total_gain + sale_gain
+        return avg_gains_by_ticker, avg_total_gain
+
+
+    _()
     return
 
 
@@ -686,12 +783,44 @@ def _(mo):
     return
 
 
+@app.cell
+def _(babson_weather):
+    wind_speed = babson_weather["current"]["wind_speed_10m"]
+    wind_unit = babson_weather["current_units"]["wind_speed_10m"]
+    print(f"The wind speed is {wind_speed} {wind_unit}.")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     **F · Another town.** Search for `Wellesley` the way the misspelled search did, with the correct spelling. Take the first place out of `results`, then its `latitude`, `longitude` and `admin1`. *Check yourself: latitude 42.29649, in Massachusetts.*
     """)
     return
+
+
+@app.cell
+def _(requests):
+    wellesley_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Wellesley&count=1",
+        timeout=10,
+    )
+    wellesley_reply.status_code
+    return (wellesley_reply,)
+
+
+@app.cell
+def _(wellesley_reply):
+    wellesley_results = wellesley_reply.json()["results"]
+    wellesley_results
+    return (wellesley_results,)
+
+
+@app.cell
+def _(wellesley_results):
+    wellesley_first = wellesley_results[0]
+    wellesley_first["latitude"], wellesley_first["longitude"], wellesley_first["admin1"]
+    return (wellesley_first,)
 
 
 @app.cell(hide_code=True)
@@ -701,6 +830,46 @@ def _(mo):
 
     **Going further.** Use F's coordinates to ask for Wellesley's current temperature. Build the address with an f-string, so that changing the town changes the forecast.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    babson_park_reply = requests.get(
+        "https://geocoding-api.open-meteo.com/v1/search?name=Babson Park&count=10",
+        timeout=10,
+    )
+    babson_park_reply.status_code
+    return (babson_park_reply,)
+
+
+@app.cell
+def _(babson_park_reply):
+    babson_park_results = babson_park_reply.json()["results"]
+    babson_park_results
+    return
+
+
+@app.cell
+def _(requests, wellesley_first):
+    wellesley_lat = wellesley_first["latitude"]
+    wellesley_lon = wellesley_first["longitude"]
+
+    wellesley_weather_url = (
+        f"https://api.open-meteo.com/v1/forecast"
+        f"?latitude={wellesley_lat}&longitude={wellesley_lon}"
+        f"&current=temperature_2m&temperature_unit=fahrenheit"
+        f"&timezone=America/New_York"
+    )
+    wellesley_weather_reply = requests.get(wellesley_weather_url, timeout=10)
+    wellesley_weather_reply.status_code
+    return (wellesley_weather_reply,)
+
+
+@app.cell
+def _(wellesley_weather_reply):
+    wellesley_weather = wellesley_weather_reply.json()
+    wellesley_weather["current"]["temperature_2m"]
     return
 
 
