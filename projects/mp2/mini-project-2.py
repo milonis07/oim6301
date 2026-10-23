@@ -46,6 +46,7 @@ def _(mo):
 
     I will check that the forecast contains seven dates and that each daily weather field contains seven values. I will combine the dates and weather values in order using `zip()`, then check that the resulting list contains seven daily records.
 
+
     **Which check will you use in Section 6, and which two numbers should agree?**
 
     I will verify the high temperature for one selected date by comparing the high temperature in my code's daily record with the high temperature for the same date in the original Open-Meteo API response. The two numbers should agree because they represent the same day's forecast.
@@ -63,11 +64,6 @@ def _(mo):
     mo.md(r"""
  
     """)
-    return
-
-
-@app.cell
-def _():
     return
 
 
