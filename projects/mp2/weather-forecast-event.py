@@ -463,5 +463,106 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 9. Going Further
+
+    *Take at least one step past the main task, in any direction, and use your agent as much as you like. It does not have to work. State what you tried, what you found, and where it is in this notebook.*
+    """)
+    return
+
+
+@app.cell
+def _(location, passing_days, requests):
+    # Going Further: Compare daylight hours on suitable event days
+
+    daylight_response = requests.get(
+        "https://api.open-meteo.com/v1/forecast",
+        params={
+            "latitude": location["latitude"],
+            "longitude": location["longitude"],
+            "daily": "sunrise,sunset",
+            "timezone": "America/New_York",
+            "forecast_days": 7
+        }
+    )
+
+    daylight_response.raise_for_status()
+    daylight_data = daylight_response.json()["daily"]
+
+    daylight_by_date = {}
+
+    for _date, _sunrise, _sunset in zip(
+        daylight_data["time"],
+        daylight_data["sunrise"],
+        daylight_data["sunset"]
+    ):
+        daylight_by_date[_date] = {
+            "sunrise": _sunrise,
+            "sunset": _sunset
+        }
+
+    print("Daylight information for passing days:")
+
+    for _day in passing_days:
+        _daylight = daylight_by_date.get(_day["date"])
+
+        if _daylight is not None:
+            print(
+                f"{_day['date']}: "
+                f"Sunrise {_daylight['sunrise']}, "
+                f"Sunset {_daylight['sunset']}"
+            )
+    return (daylight_by_date,)
+
+
+@app.cell
+def _(daylight_by_date, passing_days):
+    # Going Further: Calculate daylight hours for suitable days
+
+    print("Daylight duration on passing days:")
+
+    for _day in passing_days:
+        _daylight = daylight_by_date.get(_day["date"])
+
+        if _daylight is not None:
+            _sunrise = _daylight["sunrise"]
+            _sunset = _daylight["sunset"]
+
+            _sunrise_minutes = int(_sunrise[11:13]) * 60 + int(_sunrise[14:16])
+            _sunset_minutes = int(_sunset[11:13]) * 60 + int(_sunset[14:16])
+
+            _daylight_hours = (_sunset_minutes - _sunrise_minutes) / 60
+
+            print(
+                f"{_day['date']}: "
+                f"{_daylight_hours:.2f} hours of daylight"
+            )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    What I tried for going further:
+
+    I extended my weather planner by retrieving sunrise and sunset times from Open-Meteo. I combined this information with the days that passed my original weather rules to see how much daylight would be available for an outdoor event. This extension is included in the Section 9 cell.
+
+    I extended my tool to calculate the number of daylight hours for each day that passes the weather rules. This makes it easier to compare suitable event days based on both weather conditions and available daylight. The calculation is included in the additional Section 9 cell.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 10. Time Spent:
+
+    5 hours
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
