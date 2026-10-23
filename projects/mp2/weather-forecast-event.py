@@ -214,7 +214,6 @@ def _(forecast_records):
     print("Records saved:", len(forecast_records))
     print("File exists:", data_file.exists())
     print("Saved to:", data_file)
-
     return
 
 
@@ -231,7 +230,6 @@ def _(mo):
 @app.cell
 def _(location):
     print(f"Location selected: {location['name']}, {location['admin1']}")
-
     return
 
 
@@ -310,7 +308,7 @@ def _(evaluated_days, passing_days):
         recommendation_reason = (
             "breaks the fewest weather rules; no day passes every rule"
         )
-    return
+    return (best_day,)
 
 
 @app.cell
@@ -337,6 +335,21 @@ def _(evaluated_days):
     return
 
 
+@app.cell
+def _(best_day):
+    if best_day is not None:
+        print(
+            f"The best day for your outdoor event is {best_day['date']} "
+            f"with a high of {best_day['high_f']}°F, "
+            f"a low of {best_day['low_f']}°F, "
+            f"{best_day['rain_chance']}% chance of rain, "
+            f"and maximum wind speed of {best_day['wind_mph']} mph."
+        )
+    else:
+        print("No recommendation could be made because no forecast days were available.")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -348,11 +361,11 @@ def _(mo):
 
 
 @app.cell
-def _(forecast_records):
-    check_date = forecast_records[0]["date"]
-    code_high = forecast_records[0]["high_f"]
+def _(best_day):
+    check_date = best_day["date"]
+    code_high = best_day["high_f"]
 
-    print("Date checked:", check_date)
+    print("Recommended date checked:", check_date)
     print("High temperature from code:", code_high)
     return check_date, code_high
 
@@ -438,6 +451,14 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     **Prediction:** I will change `place` from `"Wellesley"` to `"Lexington"` while keeping the other inputs the same. I expect the tool to retrieve Lexington's location and use its latitude and longitude to fetch a new seven-day weather forecast. Since the weather conditions may differ between the two towns, I expect the table and recommended day to potentially change. The temperature, rain, and wind limits will remain the same.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    **Result:** I changed the location from Wellesley to Lexington and reran the notebook. The forecast and recommendation updated, and the recommended day's high temperature matched the original API response. The verification returned `True`.
     """)
     return
 
