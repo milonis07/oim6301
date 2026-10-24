@@ -689,6 +689,60 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    _town_lookup = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Wellesley"},
+        timeout=10,
+    ).json()["items"][0]
+
+    town_name = _town_lookup["name"]
+    town_bill = _town_lookup["average_single_family_bill_dollars"]
+    town_name, town_bill
+    return town_bill, town_name
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    def _():
+        board_reply = requests.post(
+                "https://oim.zhili.dev/message",
+                headers={"x-token": "milonis07"},
+                json={"message": f"{town_name}: ${town_bill:,}"},
+                timeout=10,
+            )
+        return board_reply.status_code, board_reply.json()
+
+
+    _()
+    return
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    def _():
+        board_reply_no_header = requests.post(
+            "https://oim.zhili.dev/message",
+            json={"message": f"{town_name}: ${town_bill:,}"},
+            timeout=10,
+        )
+        return board_reply_no_header.status_code, board_reply_no_header.json()
+
+    _()
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Without the `x-token` header, the server replied **401** with `"Missing x-token header"`.
+
+    It needs to know who sent a message so it can label the line with a name on the board — otherwise there'd be no way to tell whose message is whose, or to take one down later, the way `/message` DELETE does in exercise G.
+    """)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
