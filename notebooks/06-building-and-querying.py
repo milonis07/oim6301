@@ -219,7 +219,114 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(ask, database, duckdb):
+    with duckdb.connect(database) as _con:
+        _con.execute("""
+            CREATE TABLE town_bills (
+                name                                VARCHAR NOT NULL REFERENCES towns(name),
+                year                                INTEGER NOT NULL,
+                average_single_family_bill_dollars   INTEGER NOT NULL CHECK (average_single_family_bill_dollars >= 0),
+                PRIMARY KEY (name, year)
+            )
+        """)
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2025, 3129)")
+        _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2026, 3228)")
+
+    ask("SELECT * FROM town_bills")
+    return
+
+
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO town_bills VALUES ('Atlantis', 2026, 1000)")
+        foreign_key_check = "accepted"
+    except duckdb.ConstraintException as _error:
+        foreign_key_check = str(_error).splitlines()[0]
+    foreign_key_check
+    return
+
+
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO town_bills VALUES ('Wellesley', 2026, 20551)")
+        duplicate_check = "accepted"
+    except duckdb.ConstraintException as _error:
+        duplicate_check = str(_error).splitlines()[0]
+    duplicate_check
+    return
+
+
+@app.cell
+def _(requests):
+    norfolk_towns_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"county": "Norfolk", "per_page": 100},
+        timeout=10,
+    )
+    norfolk_towns = norfolk_towns_reply.json()["items"]
+    len(norfolk_towns)
+    return (norfolk_towns,)
+
+
+@app.cell
+def _(norfolk_towns, requests):
+    _sample_reply = requests.get(
+        f"https://oim.zhili.dev/ma/towns/{norfolk_towns[0]['dor_code']}/history",
+        timeout=10,
+    )
+    _sample_reply.status_code
+    return
+
+
+@app.cell
+def _(norfolk_towns, requests):
+    _sample_reply = requests.get(
+        f"https://oim.zhili.dev/ma/towns/{norfolk_towns[0]['dor_code']}/history",
+        timeout=10,
+    )
+    _sample_reply.status_code, _sample_reply.json()
+    return
+
+
+@app.cell
+def _(norfolk_towns, requests):
+    def get_town_history(dor_code):
+        history_reply = requests.get(
+            f"https://oim.zhili.dev/ma/towns/{dor_code}/history",
+            timeout=10,
+        )
+        return history_reply.json()
+
+    get_town_history(norfolk_towns[0]["dor_code"])["name"]
+    return (get_town_history,)
+
+
+@app.cell
+def _(get_town_history, norfolk_towns):
+    largest_growth_town = None
+    largest_growth = 0
+
+    for town in norfolk_towns:
+        history = get_town_history(town["dor_code"])
+        bills_by_year = {}
+        for year_record in history["years"]:
+            bill = year_record["average_single_family_bill_dollars"]
+            if bill is not None:
+                bills_by_year[year_record["fiscal_year"]] = bill
+
+        latest_year = max(bills_by_year)
+        earlier_year = latest_year - 10
+        if earlier_year in bills_by_year:
+            growth = bills_by_year[latest_year] - bills_by_year[earlier_year]
+            if growth > largest_growth:
+                largest_growth = growth
+                largest_growth_town = history["name"]
+
+    largest_growth_town, largest_growth
     return
 
 
@@ -259,6 +366,42 @@ def _(mo):
     return
 
 
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Nowhere Town', 'Norfolk', 0, 50000, 20000)")
+        zero_population_check = "accepted"
+    except duckdb.ConstraintException as _error:
+        zero_population_check = str(_error).splitlines()[0]
+    zero_population_check
+    return
+
+
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Another Town', 'Atlantis', 10000, 50000, 20000)")
+        bad_county_check = "accepted"
+    except duckdb.ConstraintException as _error:
+        bad_county_check = str(_error).splitlines()[0]
+    bad_county_check
+    return
+
+
+@app.cell
+def _(database, duckdb):
+    try:
+        with duckdb.connect(database) as _con:
+            _con.execute("INSERT INTO towns VALUES ('Wellesley', 'Norfolk', 30000, 50000, 20000)")
+        duplicate_name_check = "accepted"
+    except duckdb.ConstraintException as _error:
+        duplicate_name_check = str(_error).splitlines()[0]
+    duplicate_name_check
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -291,6 +434,33 @@ def _(mo):
     *Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.*
 
     **Going further.** Ask the same question of `counties` and `towns` together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT name, population, average_single_family_bill_dollars
+        FROM towns
+        WHERE population > 50000
+        ORDER BY average_single_family_bill_dollars DESC
+        LIMIT 5
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+        SELECT towns.name, counties.name AS county,
+               towns.population, towns.average_single_family_bill_dollars,
+               towns.population * 100.0 / counties.population AS share_of_county_percent
+        FROM towns
+        JOIN counties ON towns.county = counties.name
+        WHERE towns.population > 50000
+        ORDER BY towns.average_single_family_bill_dollars DESC
+        LIMIT 5
     """)
     return
 
