@@ -1,0 +1,217 @@
+expense_id,project_id,expense_date,amount,category,note
+1,1,2026-10-11,2657.33,data labeling,QA pass on labels
+2,1,2026-10-13,3173.99,data labeling,Annotation vendor invoice
+3,1,2026-08-18,4770.11,software,API credits
+4,1,2026-05-04,5684.48,travel,Conference travel
+5,1,2026-01-27,2978.44,GPU cloud,Inference serving costs
+6,1,2026-10-20,6384.2,software,Subscription renewal
+7,1,2026-11-02,2160.97,travel,Team offsite
+8,1,2026-09-26,5785.13,data labeling,QA pass on labels
+9,1,2026-10-15,4217.65,data labeling,QA pass on labels
+10,1,2026-04-05,6582.21,data labeling,Labeling batch for training set
+11,1,2026-07-15,1566.74,GPU cloud,Inference serving costs
+12,1,2026-03-16,1253.88,travel,Conference travel
+13,1,2026-01-02,6988.9,travel,Team offsite
+14,1,2026-09-15,4173.53,data labeling,QA pass on labels
+15,1,2026-05-11,4227.54,travel,Client site visit
+16,1,2026-05-26,7301.39,travel,Team offsite
+17,1,2026-10-27,5423.16,software,API credits
+18,1,2026-03-10,4900.11,software,Subscription renewal
+19,2,2026-05-25,4486.79,software,New developer tool license
+20,2,2026-09-21,5653.96,software,API credits
+21,2,2026-06-26,2570.47,travel,Team offsite
+22,2,2026-08-22,2337.93,software,API credits
+23,2,2026-07-08,7171.3,travel,Conference travel
+24,2,2026-06-10,2359.1,data labeling,Annotation vendor invoice
+25,2,2026-07-20,2803.59,GPU cloud,Spot instance cluster
+26,2,2026-05-22,5991.34,software,Subscription renewal
+27,2,2026-09-23,7467.54,software,New developer tool license
+28,2,2026-10-04,918.35,data labeling,Annotation vendor invoice
+29,2,2026-09-16,1977.54,data labeling,Annotation vendor invoice
+30,2,2026-04-11,5121.66,data labeling,Labeling batch for training set
+31,2,2026-07-27,2675.83,travel,Client site visit
+32,2,2026-08-16,91.19,data labeling,Labeling batch for training set
+33,2,2026-11-08,5240.5,travel,Conference travel
+34,2,2026-10-08,5221.78,travel,Conference travel
+35,2,2026-04-13,2319.05,software,Subscription renewal
+36,2,2026-09-30,4304.46,data labeling,Labeling batch for training set
+37,3,2026-02-06,3372.19,data labeling,Labeling batch for training set
+38,3,2026-02-11,6314.29,travel,Team offsite
+39,3,2025-11-12,7020.11,software,New developer tool license
+40,3,2026-04-28,7431.22,GPU cloud,Inference serving costs
+41,3,2026-08-13,7913.34,travel,Team offsite
+42,3,2026-01-15,7119.62,travel,Team offsite
+43,3,2026-01-04,2219.05,travel,Conference travel
+44,3,2026-10-05,5862.4,data labeling,QA pass on labels
+45,3,2026-04-29,161.97,data labeling,QA pass on labels
+46,3,2026-10-01,1445.18,data labeling,QA pass on labels
+47,3,2025-12-22,4146.48,travel,Conference travel
+48,3,2026-01-18,1519.01,GPU cloud,Inference serving costs
+49,3,2025-11-11,7489.81,software,New developer tool license
+50,3,2026-03-24,1922.39,travel,Conference travel
+51,3,2026-08-28,4680.56,software,Subscription renewal
+52,3,2026-10-28,5246.78,software,Subscription renewal
+53,3,2026-07-04,5358.9,GPU cloud,Inference serving costs
+54,3,2026-07-23,3273.06,data labeling,Annotation vendor invoice
+55,4,2026-11-02,5537.81,software,New developer tool license
+56,4,2026-10-07,4936.27,software,Subscription renewal
+57,4,2026-10-31,1267.83,travel,Conference travel
+58,4,2026-10-23,5630.43,travel,Team offsite
+59,4,2026-11-05,6106.78,data labeling,Annotation vendor invoice
+60,4,2026-10-26,4227.78,GPU cloud,Spot instance cluster
+61,4,2026-10-29,670.92,software,Subscription renewal
+62,4,2026-10-25,6638.75,GPU cloud,Cloud GPU hours for training
+63,4,2026-10-26,1358.07,data labeling,QA pass on labels
+64,4,2026-11-07,5458.35,GPU cloud,Spot instance cluster
+65,4,2026-10-25,772.99,travel,Conference travel
+66,4,2026-10-25,3654.79,GPU cloud,Inference serving costs
+67,4,2026-10-28,4533.09,travel,Conference travel
+68,4,2026-10-18,5800.08,software,New developer tool license
+69,4,2026-10-30,5979.15,GPU cloud,Cloud GPU hours for training
+70,4,2026-11-06,3418.39,GPU cloud,Cloud GPU hours for training
+71,4,2026-09-27,7479.93,GPU cloud,Inference serving costs
+72,4,2026-10-04,2332.37,GPU cloud,Cloud GPU hours for training
+73,5,2026-07-06,3026.96,travel,Conference travel
+74,5,2026-09-25,3036.38,travel,Client site visit
+75,5,2026-09-24,993.13,software,New developer tool license
+76,5,2026-04-16,5836.47,data labeling,Labeling batch for training set
+77,5,2026-08-17,7829.0,GPU cloud,Spot instance cluster
+78,5,2026-04-19,4278.87,travel,Client site visit
+79,5,2026-05-13,2801.97,travel,Client site visit
+80,5,2026-07-25,306.13,GPU cloud,Spot instance cluster
+81,5,2026-01-26,1963.3,GPU cloud,Cloud GPU hours for training
+82,5,2026-01-16,3599.21,GPU cloud,Cloud GPU hours for training
+83,5,2026-04-21,3248.01,GPU cloud,Spot instance cluster
+84,5,2026-01-20,6047.37,data labeling,Labeling batch for training set
+85,5,2026-10-13,1911.58,software,New developer tool license
+86,5,2026-03-06,1933.39,software,API credits
+87,5,2026-05-12,3337.8,data labeling,Labeling batch for training set
+88,5,2026-07-29,5026.65,data labeling,Annotation vendor invoice
+89,5,2026-06-17,422.73,travel,Team offsite
+90,5,2026-06-04,6297.15,travel,Team offsite
+91,6,2026-04-16,3295.66,travel,Conference travel
+92,6,2026-07-14,6047.61,data labeling,Labeling batch for training set
+93,6,2026-01-26,2440.85,data labeling,QA pass on labels
+94,6,2026-06-15,4520.97,GPU cloud,Spot instance cluster
+95,6,2026-03-24,3137.93,data labeling,Labeling batch for training set
+96,6,2026-07-02,5191.31,software,New developer tool license
+97,6,2026-02-19,4308.3,GPU cloud,Cloud GPU hours for training
+98,6,2026-09-19,3048.49,software,API credits
+99,6,2026-02-18,6995.28,GPU cloud,Spot instance cluster
+100,6,2026-05-03,3861.18,data labeling,QA pass on labels
+101,6,2026-02-19,1733.87,GPU cloud,Spot instance cluster
+102,6,2026-07-17,5987.69,GPU cloud,Cloud GPU hours for training
+103,6,2026-03-16,3203.22,data labeling,Annotation vendor invoice
+104,6,2026-05-27,6215.34,software,New developer tool license
+105,6,2026-05-17,2501.96,software,API credits
+106,6,2026-07-12,3754.73,travel,Conference travel
+107,6,2026-06-13,2997.1,data labeling,Labeling batch for training set
+108,6,2025-11-22,5942.96,data labeling,QA pass on labels
+109,8,2026-05-27,2396.78,travel,Conference travel
+110,8,2026-11-06,3069.73,data labeling,Labeling batch for training set
+111,8,2026-09-29,4427.61,travel,Conference travel
+112,8,2026-08-10,6118.72,software,API credits
+113,8,2026-10-11,3713.59,travel,Conference travel
+114,8,2026-08-24,1162.67,data labeling,QA pass on labels
+115,8,2026-08-23,7339.35,data labeling,Annotation vendor invoice
+116,8,2026-11-07,4215.36,GPU cloud,Cloud GPU hours for training
+117,8,2026-07-21,6126.49,GPU cloud,Cloud GPU hours for training
+118,8,2026-05-15,590.35,data labeling,Labeling batch for training set
+119,8,2026-07-11,4070.58,data labeling,Labeling batch for training set
+120,8,2026-04-11,5291.31,travel,Client site visit
+121,8,2026-08-20,144.22,travel,Team offsite
+122,8,2026-06-19,4309.12,software,Subscription renewal
+123,8,2026-05-22,6459.03,travel,Client site visit
+124,8,2026-06-07,4218.86,GPU cloud,Cloud GPU hours for training
+125,8,2026-06-14,6530.95,software,New developer tool license
+126,8,2026-07-19,3015.76,GPU cloud,Inference serving costs
+127,9,2026-03-03,7922.35,data labeling,QA pass on labels
+128,9,2026-10-06,5247.2,GPU cloud,Cloud GPU hours for training
+129,9,2026-05-20,3271.96,GPU cloud,Spot instance cluster
+130,9,2025-11-12,496.11,travel,Team offsite
+131,9,2026-06-18,707.35,data labeling,Annotation vendor invoice
+132,9,2025-12-26,4548.56,software,API credits
+133,9,2026-10-28,1876.64,GPU cloud,Spot instance cluster
+134,9,2025-12-16,2205.21,travel,Team offsite
+135,9,2026-08-23,7199.53,software,API credits
+136,9,2026-04-18,1475.87,GPU cloud,Cloud GPU hours for training
+137,9,2026-11-07,4716.94,data labeling,QA pass on labels
+138,9,2026-08-23,2429.25,GPU cloud,Cloud GPU hours for training
+139,9,2026-08-11,5432.43,travel,Conference travel
+140,9,2026-01-18,6057.09,travel,Team offsite
+141,9,2026-05-04,4031.3,GPU cloud,Cloud GPU hours for training
+142,9,2025-12-16,3524.85,GPU cloud,Inference serving costs
+143,9,2026-04-24,7752.92,travel,Client site visit
+144,9,2026-06-26,6279.21,software,New developer tool license
+145,10,2026-05-19,2878.7,data labeling,QA pass on labels
+146,10,2026-10-12,5453.57,data labeling,QA pass on labels
+147,10,2026-04-08,6188.73,GPU cloud,Cloud GPU hours for training
+148,10,2026-01-25,702.2,GPU cloud,Inference serving costs
+149,10,2026-04-19,5930.26,data labeling,QA pass on labels
+150,10,2026-04-14,777.59,GPU cloud,Inference serving costs
+151,10,2025-12-30,6102.7,software,Subscription renewal
+152,10,2026-06-25,1539.76,GPU cloud,Spot instance cluster
+153,10,2025-12-23,871.18,travel,Conference travel
+154,10,2026-04-23,4795.55,GPU cloud,Inference serving costs
+155,10,2026-05-25,2370.19,GPU cloud,Cloud GPU hours for training
+156,10,2026-02-02,4597.09,data labeling,Annotation vendor invoice
+157,10,2026-03-25,1397.54,travel,Conference travel
+158,10,2025-12-10,3970.34,software,Subscription renewal
+159,10,2026-04-10,2243.9,travel,Conference travel
+160,10,2026-03-14,2920.94,GPU cloud,Spot instance cluster
+161,10,2026-02-16,4770.76,travel,Conference travel
+162,10,2025-11-11,1127.14,GPU cloud,Inference serving costs
+163,11,2026-08-25,6740.83,software,New developer tool license
+164,11,2026-04-22,2711.15,travel,Conference travel
+165,11,2026-05-25,4845.53,software,New developer tool license
+166,11,2026-09-03,1462.22,software,New developer tool license
+167,11,2026-10-21,5892.25,software,API credits
+168,11,2026-07-05,2640.8,data labeling,QA pass on labels
+169,11,2026-05-25,955.41,software,API credits
+170,11,2026-02-25,5469.62,data labeling,Annotation vendor invoice
+171,11,2026-05-30,7546.65,travel,Conference travel
+172,11,2026-03-19,6658.69,software,New developer tool license
+173,11,2026-07-17,1156.47,travel,Client site visit
+174,11,2026-09-16,5286.37,software,New developer tool license
+175,11,2026-10-15,3620.08,GPU cloud,Spot instance cluster
+176,11,2026-09-14,4298.22,travel,Team offsite
+177,11,2026-08-15,6336.23,GPU cloud,Spot instance cluster
+178,11,2026-06-19,919.49,GPU cloud,Spot instance cluster
+179,11,2026-03-06,1372.39,software,API credits
+180,11,2026-07-31,7736.15,travel,Conference travel
+181,12,2026-03-20,133.85,GPU cloud,Cloud GPU hours for training
+182,12,2026-05-27,3593.94,data labeling,QA pass on labels
+183,12,2025-11-20,2792.49,data labeling,QA pass on labels
+184,12,2025-12-21,2398.69,GPU cloud,Cloud GPU hours for training
+185,12,2026-05-02,2819.21,data labeling,QA pass on labels
+186,12,2026-05-05,4192.86,data labeling,QA pass on labels
+187,12,2026-10-30,3533.42,GPU cloud,Inference serving costs
+188,12,2025-11-30,584.04,software,API credits
+189,12,2026-05-02,229.55,GPU cloud,Spot instance cluster
+190,12,2026-01-31,5433.26,GPU cloud,Spot instance cluster
+191,12,2026-08-17,4152.15,data labeling,Labeling batch for training set
+192,12,2026-07-02,4500.8,software,Subscription renewal
+193,12,2026-02-11,5056.59,travel,Team offsite
+194,12,2026-09-18,3194.88,travel,Client site visit
+195,12,2026-05-26,4758.02,travel,Client site visit
+196,12,2026-11-03,1685.99,data labeling,Labeling batch for training set
+197,12,2026-08-09,6406.04,GPU cloud,Cloud GPU hours for training
+198,12,2026-06-30,2641.58,software,Subscription renewal
+199,14,2026-11-08,5382.08,software,API credits
+200,14,2026-11-02,4795.92,software,API credits
+201,14,2026-11-06,2816.0,GPU cloud,Spot instance cluster
+202,14,2026-10-27,6519.22,data labeling,Annotation vendor invoice
+203,14,2026-10-28,5393.28,GPU cloud,Cloud GPU hours for training
+204,14,2026-10-19,2477.77,data labeling,QA pass on labels
+205,14,2026-11-03,4111.06,data labeling,Annotation vendor invoice
+206,14,2026-11-04,4619.71,data labeling,Labeling batch for training set
+207,14,2026-10-19,5102.24,travel,Team offsite
+208,14,2026-10-16,3942.65,data labeling,Labeling batch for training set
+209,14,2026-10-11,6743.78,software,New developer tool license
+210,14,2026-10-20,3902.64,GPU cloud,Inference serving costs
+211,14,2026-11-08,3302.62,travel,Conference travel
+212,14,2026-10-13,3935.16,travel,Team offsite
+213,14,2026-10-22,6377.25,GPU cloud,Inference serving costs
+214,14,2026-10-26,2235.08,GPU cloud,Cloud GPU hours for training
+215,14,2026-11-08,4546.92,travel,Team offsite
+216,14,2026-10-25,4603.08,GPU cloud,Spot instance cluster

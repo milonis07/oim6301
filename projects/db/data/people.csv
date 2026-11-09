@@ -1,0 +1,26 @@
+person_id,first_name,last_name,work_email,title,start_date,manager_id
+1,Danielle,Johnson,danielle.johnson@babsonailabs.com,Co-Founder & CEO,2023-12-11,
+2,Joshua,Walker,joshua.walker@babsonailabs.com,Co-Founder & CTO,2024-04-24,
+3,Jill,Rhodes,jill.rhodes@babsonailabs.com,Engineering Lead,2025-06-14,2
+4,Patricia,Miller,patricia.miller@babsonailabs.com,Data Science Lead,2025-02-21,1
+5,Robert,Johnson,robert.johnson@babsonailabs.com,Product Lead,2025-04-16,1
+6,Jeffery,Wagner,jeffery.wagner@babsonailabs.com,Operations Lead,2024-07-15,1
+7,Anthony,Gonzalez,anthony.gonzalez@babsonailabs.com,Machine Learning Engineer,2025-02-22,6
+8,Debra,Gardner,debra.gardner@babsonailabs.com,Project Manager,2026-09-19,3
+9,Jeffrey,Lawrence,jeffrey.lawrence@babsonailabs.com,Project Manager,2026-02-23,3
+10,Lisa,Smith,lisa.smith@babsonailabs.com,Project Manager,2024-10-16,6
+11,Linda,Wolfe,linda.wolfe@babsonailabs.com,Machine Learning Engineer,2025-07-17,5
+12,Matthew,Moore,matthew.moore@babsonailabs.com,QA Engineer,2024-09-02,4
+13,Susan,Rogers,susan.rogers@babsonailabs.com,Software Engineer,2025-11-05,5
+14,Christopher,Davis,christopher.davis@babsonailabs.com,Data Analyst,2026-03-13,5
+15,Melanie,Munoz,melanie.munoz@babsonailabs.com,Data Analyst,2026-07-17,6
+16,Lindsay,Blair,lindsay.blair@babsonailabs.com,Business Analyst,2025-10-17,5
+17,Amanda,Dudley,amanda.dudley@babsonailabs.com,Data Engineer,2024-07-15,3
+18,Nicholas,Arnold,nicholas.arnold@babsonailabs.com,QA Engineer,2025-04-18,3
+19,Maria,Montgomery,maria.montgomery@babsonailabs.com,Product Designer,2026-07-31,5
+20,Michelle,Ray,michelle.ray@babsonailabs.com,Data Analyst,2025-03-07,4
+21,Janet,Williams,janet.williams@babsonailabs.com,Business Analyst,2026-09-03,4
+22,Jeremy,Roberts,jeremy.roberts@babsonailabs.com,Data Analyst,2026-07-30,4
+23,Christopher,Hall,christopher.hall@babsonailabs.com,Data Engineer,2025-09-25,5
+24,Craig,Ramirez,craig.ramirez@babsonailabs.com,Software Engineer,2025-01-07,5
+25,Cynthia,Diaz,cynthia.diaz@babsonailabs.com,Project Manager,2025-10-05,5
