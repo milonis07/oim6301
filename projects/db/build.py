@@ -64,6 +64,8 @@ def _(mo):
     `make_data.py` wrote one CSV per table into `data/`. The cell below deletes any old database file, opens a new one, creates the tables, loads the data, and closes the file when the `with` block ends, so nothing is left open.
 
     `people` is loaded one row at a time, each manager before the people who report to them. The rows in `people.csv` are already in that order: the two founders first, then the leads, then everybody else. Loading it in one `INSERT ... SELECT` would fail, because DuckDB checks every row's `manager_id` against the table as it was before the statement ran, and a report's manager would not be there yet.
+
+    **Rows broken on purpose.** `tasks.task_id = 1` is assigned to person 1, who does not work on project 1. `tasks.task_id = 2` is assigned to person 25, who does work on project 1, but its `created_date` is before person 25's `start_date`. Both load without error, because a `CHECK` only sees one row of one table, and this rule needs `tasks`, `assignments` and `people` at once. Checked with a query instead, in `questions.py`.
     """)
     return
 
