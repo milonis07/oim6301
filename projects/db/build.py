@@ -165,15 +165,26 @@ def _(duckdb, mo, pl):
                     p.name,
                     p.status,
                     p.budget,
-                    coalesce(sum(e.amount), 0) AS spent,
-                    round(coalesce(sum(e.amount), 0) * 100.0 / p.budget, 1) AS percent_spent,
-                    count(DISTINCT t.task_id) AS total_tasks,
-                    count(DISTINCT CASE WHEN t.completed_date IS NULL THEN t.task_id END) AS open_tasks,
-                    count(DISTINCT CASE WHEN t.completed_date IS NULL AND t.due_date < current_date THEN t.task_id END) AS overdue_tasks
+                    coalesce(expense_totals.spent, 0) AS spent,
+                    round(coalesce(expense_totals.spent, 0) * 100.0 / p.budget, 1) AS percent_spent,
+                    coalesce(task_totals.total_tasks, 0) AS total_tasks,
+                    coalesce(task_totals.open_tasks, 0) AS open_tasks,
+                    coalesce(task_totals.overdue_tasks, 0) AS overdue_tasks
                 FROM projects p
-                LEFT JOIN expenses e ON e.project_id = p.project_id
-                LEFT JOIN tasks t ON t.project_id = p.project_id
-                GROUP BY p.project_id, p.name, p.status, p.budget
+                LEFT JOIN (
+                    SELECT project_id, sum(amount) AS spent
+                    FROM expenses
+                    GROUP BY project_id
+                ) expense_totals ON expense_totals.project_id = p.project_id
+                LEFT JOIN (
+                    SELECT
+                        project_id,
+                        count(*) AS total_tasks,
+                        count(CASE WHEN completed_date IS NULL THEN 1 END) AS open_tasks,
+                        count(CASE WHEN completed_date IS NULL AND due_date < DATE '2026-11-08' THEN 1 END) AS overdue_tasks
+                    FROM tasks
+                    GROUP BY project_id
+                ) task_totals ON task_totals.project_id = p.project_id
         """)
 
     database.name
